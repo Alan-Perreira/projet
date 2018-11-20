@@ -1,0 +1,12 @@
+<div class="main">
+  <?php foreach ($com as $key => $value): ?>
+    <p style='color: black;'> <em>Commentaire écris par <?=$value['FirstName']?> <?=$value['LastName']?> :</em></p>
+    <p><?=$value['avis']?></p>
+
+
+    <hr>
+  <?php endforeach; ?>
+
+    <a class="button button-cancel" href="<?=$requestUrl?>/avis?id=<?=$_GET['id']?>">Retour</a>
+
+</div>

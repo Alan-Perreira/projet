@@ -1,0 +1,33 @@
+<div class="main">
+  <h1>hello</h1>
+  <?php foreach ($avis as $key => $value): ?>
+  <p><?=$value['name']?></p>
+  <img src="<?= $wwwUrl ?>/image/<?=$value["img"]?>" alt="">
+  <p>
+    <a href="<?=$requestUrl?>/comment?id=<?=$_GET['id']?>"> <button class="button button-primary" type="button" name="button">voir les avis</button></a>
+
+  </p>
+  <?php endforeach; ?>
+<div id="comment" class="">
+  <form class="generic-form" action="<?=$requestUrl?>/avis?id=<?=$_GET['id']?>" method="POST">
+
+    <!-- Utilisation d'un champ caché pour spécifier à quel article rattacher le commentaire -->
+    <input type="hidden" name="postId" value="1">
+
+    <fieldset>
+      <legend><i class="fa fa-comment-o"></i>Rédiger votre avis</legend>
+
+      <label class="textarea" for="contents">Commentaire :</label>
+      <textarea id="contents" name="contents" rows="5"></textarea>
+
+      <button class="button button-primary" type="submit">Ajouter</button>
+      <a class="button button-cancel" href="<?=$requestUrl?>">Annuler</a>
+</div>
+<div class="hide">
+
+</div>
+
+    </fieldset>
+  </form>
+
+</div>

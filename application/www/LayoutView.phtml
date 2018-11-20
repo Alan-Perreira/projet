@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dream of mangas</title>
+
+
+
+    <link rel="stylesheet" href="<?= $wwwUrl ?>/css/style.css">
+
+    <!-- Librairie jQuery -->
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+
+    <!-- JavaScript de l'application -->
+    <script src="<?= $wwwUrl ?>/js/utilities.js"></script>
+</head>
+<body>
+  <header>
+    <a href="<?= $requestUrl ?>"><h1>Adri*j</h1></a>
+    <p>Forum de discution</p>
+<nav>
+  <ul>
+    <a href="#"><li>Avis</li></a>
+    <a href="#"><li>Aider-nous à nous ameliorer</li></a>
+    <a href="#"><li>Nous contacter</li></a>
+  </ul>
+</nav>
+  </header>
+
+<main>
+    <!-- Affichage du template lié à la vue -->
+    <?php include $this->viewData['template'] ?>
+</main>
+
+<!-- Pied de page commun -->
+<footer>
+  <p> Merci de votre visite  hesité pas a partager à vos amis</p>
+
+  <em>Adrij fondation  © 2018</em>
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!-- Message de notification -->
+
+<!-- Code HTML à écrire -->
+
+
+<!-- Liste des aliments -->
+<div class="main">
+  <h2>Bienvenu !</h2>
+  <div class="nav-button">
+    <?php if(array_key_exists('user', $_SESSION) == true) {?>
+      <a href="#"> <button class="button button-primary" type="button">Liste de favorie</button> </a>
+      <a href="<?= $requestUrl ?>/logout"><button class="rigth button button-primary" type="button">Déconnextion</button></a>
+    <?php } else  {?>
+
+      <a href="<?= $requestUrl ?>/user/login"> <button class="button button-primary" type="button">Connextion</button> </a>
+      <a href="<?= $requestUrl ?>/register"><button class="rigth button button-primary" type="button">Inscription</button></a>
+      <?php } ?>
+  </div>
+  <p>liste de mangas les plus discuté</p>
+  <?php foreach ($mang as $key => $value): ?>
+
+  <ul class="liste">
+    <li><img src="<?= $wwwUrl ?>/image/<?=$value["img"]?>" alt=""> <p class="mangasNom"><?=$value["name"]?></p> </li>
+    <li class="title-resume">synopsis :</li>
+    <li class="resume"><?=$value["resume"]?></li>
+<li class="title-resume">Date de sorti :</li>
+<li class="resume"><?=$value["date"]?></li>
+  </ul>
+
+<a href="<?=$requestUrl?>/avis?id=<?= $value['Id']?>"><button class="rigth button button-primary" data-index="" type="button" name="button">Avis</button></a>
+<?php endforeach; ?>
+
+</div>
