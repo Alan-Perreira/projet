@@ -12,6 +12,16 @@ class RegisterModel {
     $user = new Database();
     $dash = $this->hashPassword($d);
 
+    $sql2 = 'SELECT * FROM user WHERE Mail= ?';
+
+    $criteria2 = [$c];
+
+    $user2 = $user->queryOne($sql2, $criteria2);
+
+    if ($user2 != false) {
+      return;
+    }
+
     $sql = 'INSERT INTO user (FirstName, LastName, Mail, Password) VALUES (?,?,?,?)';
 
     $value = [$a, $b, $c, $dash];

@@ -219,15 +219,36 @@ main h2 {
 
 
 
+.nom-fav {
+  color: red;
+  margin-left: 50%;
+}
+
+.supp-fav {
+  position: absolute;
+  left: 83%;
+  float: right;
+  color: black;
+  margin: 0;
+  transition: all 300ms;
+}
+.supp-fav:hover {
+  color: #fff;
+}
 
 
 
+.favo:hover{
+  background-color: #66CC99 !important;
+}
 
+.poubelle {
+  margin-left: 10px;
+}
 
-
-
-
-
+.poubelle:hover{
+  color: red;
+}
 
 
 /* CSS BUTTON*/

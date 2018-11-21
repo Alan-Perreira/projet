@@ -1,7 +1,15 @@
+<?php if(array_key_exists('user', $_SESSION) == false) {
+  $http = new Http();
+  $http->redirectTo('/user/login');}
+  else {?>
 <div class="main">
   <?php foreach ($com as $key => $value): ?>
+
     <p style='color: black;'> <em>Commentaire écris par <?=$value['FirstName']?> <?=$value['LastName']?> :</em></p>
-    <p><?=$value['avis']?></p>
+    <p><?=$value['avis']?>
+      <a style="color: #5ee3a7;" href="<?=$requestUrl?>/delete?id=<?=$value['Id']?>"><i class="fas fa-trash-alt poubelle"></i>
+      </a>
+    </p>
 
 
     <hr>
@@ -10,3 +18,4 @@
     <a class="button button-cancel" href="<?=$requestUrl?>/avis?id=<?=$_GET['id']?>">Retour</a>
 
 </div>
+<?php } ?>

@@ -13,11 +13,13 @@ class RegisterController {
           $users = new RegisterModel();
           $users->saveUser($_POST['firstName'], $_POST['lastName'], $_POST['email'], $_POST['password']);
 
+          $http = new Http();
+          $http->redirectTo('/user/login');
 
-        }
   }
 }
 
+}
 
 
 

@@ -1,3 +1,7 @@
+<?php if(array_key_exists('user', $_SESSION) == false) {
+  $http = new Http();
+  $http->redirectTo('/user/login');}
+  else {?>
 <div class="main">
   <h1>hello</h1>
   <?php foreach ($avis as $key => $value): ?>
@@ -31,3 +35,4 @@
   </form>
 
 </div>
+<?php } ?>

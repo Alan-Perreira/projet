@@ -1,0 +1,31 @@
+<?php if(array_key_exists('user', $_SESSION) == false) {
+  $http = new Http();
+  $http->redirectTo('/user/login');}
+  else {?>
+<div class="main">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Liste de favori</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php foreach ($favo as $key => $value): ?>
+        <tr>
+          <td class="nom-fav" ><strong><?=$value['name']?></strong><a class="supp-fav" href="<?=$requestUrl?>/deletefav?id=<?=$value['Id']?>">Supprimer des favoris</a> </td>
+
+        </tr>
+        <tr>
+          <td><?=$value['resume']?></td>
+        </tr>
+
+      <?php endforeach; ?>
+    </tbody>
+  </table>
+  <a href="<?= $requestUrl ?>"><button class="button button-cancel small" type="button" name="button">Retour</button></a>
+</div>
+
+
+
+
+  <?php } ?>

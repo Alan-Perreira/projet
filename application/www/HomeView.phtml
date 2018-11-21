@@ -8,7 +8,7 @@
   <h2>Bienvenu !</h2>
   <div class="nav-button">
     <?php if(array_key_exists('user', $_SESSION) == true) {?>
-      <a href="#"> <button class="button button-primary" type="button">Liste de favorie</button> </a>
+      <a href="<?= $requestUrl ?>/favori?id=<?=$_SESSION['user']['Id']?>"> <button class="button button-primary" type="button">Liste de favorie</button> </a>
       <a href="<?= $requestUrl ?>/logout"><button class="rigth button button-primary" type="button">Déconnextion</button></a>
     <?php } else  {?>
 
@@ -20,7 +20,12 @@
   <?php foreach ($mang as $key => $value): ?>
 
   <ul class="liste">
-    <li><img src="<?= $wwwUrl ?>/image/<?=$value["img"]?>" alt=""> <p class="mangasNom"><?=$value["name"]?></p> </li>
+    <li><img src="<?= $wwwUrl ?>/image/<?=$value["img"]?>" alt=""> <p>
+      <?php if(array_key_exists('user', $_SESSION)) { ?>
+      <a style="background-color: #0ab2ff91;" href="<?=$requestUrl?>/ajou?id=<?= $_SESSION['user']['Id']?>&name=<?=$value['name']?>&resume=<?=$value['resume']?>" class="button button-primary favo"> Ajouter aux favoris</a>
+    <?php } ?>
+      </p>
+      <p class="mangasNom"><?=$value["name"]?></p> </li>
     <li class="title-resume">synopsis :</li>
     <li class="resume"><?=$value["resume"]?></li>
 <li class="title-resume">Date de sorti :</li>
