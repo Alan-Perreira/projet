@@ -7,8 +7,12 @@
 
     <p style='color: black;'> <em>Commentaire écris par <?=$value['FirstName']?> <?=$value['LastName']?> :</em></p>
     <p><?=$value['avis']?>
+
+<?php if ($value['user_Id'] == $_SESSION['user']['Id'] ) {?>
       <a style="color: #5ee3a7;" href="<?=$requestUrl?>/delete?id=<?=$value['Id']?>"><i class="fas fa-trash-alt poubelle"></i>
       </a>
+
+<?php } ?>
     </p>
 
 

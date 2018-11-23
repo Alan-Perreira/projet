@@ -20,7 +20,7 @@
   <?php foreach ($mang as $key => $value): ?>
 
   <ul class="liste">
-    <li><img src="<?= $wwwUrl ?>/image/<?=$value["img"]?>" alt=""> <p>
+    <li><img style="margin: 10px 0;" src="<?= $wwwUrl ?>/image/<?=$value["img"]?>" alt=""> <p>
       <?php if(array_key_exists('user', $_SESSION)) { ?>
       <a style="background-color: #0ab2ff91;" href="<?=$requestUrl?>/ajou?id=<?= $_SESSION['user']['Id']?>&name=<?=$value['name']?>&resume=<?=$value['resume']?>" class="button button-primary favo"> Ajouter aux favoris</a>
     <?php } ?>
@@ -32,7 +32,7 @@
 <li class="resume"><?=$value["date"]?></li>
   </ul>
 
-<a href="<?=$requestUrl?>/avis?id=<?= $value['Id']?>"><button class="rigth button button-primary" data-index="" type="button" name="button">Avis</button></a>
+<a  href="<?=$requestUrl?>/avis?id=<?= $value['Id']?>"><button class="rigth button button-primary" data-index="" type="button" name="button">Avis</button></a>
 <?php endforeach; ?>
 
 </div>

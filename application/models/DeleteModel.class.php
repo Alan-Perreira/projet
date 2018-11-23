@@ -12,6 +12,17 @@ class DeleteModel {
     $user->executeSql($sql, $value);
   }
 
+  public function deleteMan($a) {
+    $user = new Database();
+
+
+    $sql = 'DELETE FROM mangas WHERE Id= ?';
+
+    $value = [$a];
+
+    $user->executeSql($sql, $value);
+  }
+
 
 
 

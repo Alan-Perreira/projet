@@ -46,12 +46,11 @@ ul a:hover {
 
 main {
   text-align: center;
-  height: 100px;
   background-image: url("../image/bien.png");
 
   background-position: center;
   background-size: contain;
-  height: 2000px;
+
 }
 .mangasNom {
   color: red;
@@ -82,6 +81,34 @@ main h2 {
 .liste .title-resume {
   color: blue;
 }
+
+
+
+
+footer {
+  text-align: center;
+  color: red;
+
+}
+
+body {
+  /* background-image: url("../image/foot.jpg");
+  background-size: cover;
+  background-repeat: no-repeat; */
+  background-color: #000000c7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
